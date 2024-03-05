@@ -1,6 +1,6 @@
 import { RealizarLogin } from '../../service/login'
 import { Notify, Dark } from 'quasar'
-import { sessaolog } from 'src/service/sessaolog'
+// import { sessaolog } from 'src/service/sessaolog'
 import { socketIO } from 'src/utils/socket'
 import { validaapi } from 'src/service/validaapi'
 
@@ -44,7 +44,7 @@ const user = {
     async UserLogin ({ commit, dispatch }, user) {
       user.email = user.email.trim()
       try {
-        await sessaolog()
+     //   await sessaolog()
         const { data } = await RealizarLogin(user)
         localStorage.setItem('token', JSON.stringify(data.token))
         localStorage.setItem('username', data.username)
